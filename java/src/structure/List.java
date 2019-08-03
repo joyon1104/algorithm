@@ -15,7 +15,7 @@ import java.util.LinkedList;
  * 
  */
 
-public class list {
+public class List {
 
 	public static void main(String[] args) {
 		
@@ -38,7 +38,9 @@ public class list {
 		 * ArrayList 함수
 		 * arrayList.get(i) - i번째 값 불러오기 (= 배열 arr[i])
 		 * arrayList.size() - 리스트 개수 불러오기 (= 배열 arr.length) 
-		 * arrayList.clear() - 초기화 
+		 * arrayList.clear() - 초기화
+		 * 
+		 * Collections.sort(arrayList) - 정렬 메소드
 		 */
 		
 		ArrayList<String> list = new ArrayList<String>();

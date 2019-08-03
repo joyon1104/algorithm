@@ -9,7 +9,7 @@ import java.util.*;
  *	- 기능이 별로 없음.
  */	
 
-public class array {
+public class Array {
 	
 	public static void main(String[] args) {
 		

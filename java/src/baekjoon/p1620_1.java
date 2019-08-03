@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 //190721 스터디
-//시간초과  -> arraylist 대신 hashmap으로 재코
+//시간초과  -> arraylist 대신 hashmap으로 재코딩 
 
 public class p1620_1 {
 

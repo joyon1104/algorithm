@@ -10,7 +10,7 @@ import java.util.HashMap;
  * - 이미 존재하는 key를 포함하는 key-value가 들어오면 최근에 들어온 key-value로 갱신.
  */
 
-public class map {
+public class Map {
 
 	public static void main(String[] args) {
 	

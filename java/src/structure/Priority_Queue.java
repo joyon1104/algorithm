@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
  * - 기존 큐와 다르게 우선순위가 높은 데이터가 먼저 출력
  */
 
-public class priorityQueue {
+public class Priority_Queue {
 	
 	static class Vehicle implements Comparable<Vehicle>{
 	    String name;
