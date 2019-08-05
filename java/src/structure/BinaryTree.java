@@ -21,7 +21,6 @@ public class BinaryTree<E> {
 			left = null;
 			right = null;
 		}
-
 		public String toString() {
 			return data.toString();
 		}
@@ -84,7 +83,7 @@ public class BinaryTree<E> {
 		Node n1 = bt.makeBT("fox", n2, n3);
 
 	   System.out.print("preorder : ");
-       bt.preorder(n1);
+       bt.preorder(n1);	//root를 input
        System.out.println();
 
        System.out.print("inorder : ");

@@ -5,22 +5,18 @@ import java.util.*;
 
 
 //190715
-
 /*
+ * 이진검색트리 (BST)
+ * - 이진트리이면서
+ * - 각 노드에 하나의 키를 저장
+ * - 각 노드 v에 대해 v의 왼쪽 subtree에 있는 값들은 v보다 작거나 같고, 오른쪽 subtree 에 있는 값은 v보다 크거나 같다.
+ * 
+ * 이진검색트리 생성 후 search, insert, delete 구현
+ * 최대값, 최소값 추출
+ * Successor : 노드 x의 successor란, x보다 크면서 가장 작은 키를 가진 노드 (모든키들이 서로 다르다고 가정)
+ * Predecessor : 노드 x의 predecessor란, x보다 작으면서 가장 작은 키를 가진 노드 (모든키들이 서로 다르다고 가정)
+ */
 
-이진트리 생성 후 search, insert, delete 구현
-
-최대값, 최소값 추출
-
-Successor : 노드 x의 successor란, x보다 크면서 가장 작은 키를 가진 노드 (모든키들이 서로 다르다고 가정)
-
-Predecessor : 노드 x의 predecessor란, x보다 작으면서 가장 작은 키를 가진 노드 (모든키들이 서로 다르다고 가정)
-
-*/
-
-
-
-//node 생성 class -> BinaryTree.java
 
 class Node{
 	int data;
@@ -48,8 +44,8 @@ public class BinaryTree2<E> {
 	} 
 
 	 public Node makeBT(int data, Node bt1, Node bt2){
-       Node newNode = new Node(data);
-       newNode.left = bt1;
+       Node newNode = new Node(data);	//노드 생성 
+       newNode.left = bt1;				//생성한 노드의 왼쪽, 오른쪽 자식노드를 지정 
        newNode.right =bt2;
 
        return newNode;
@@ -63,7 +59,7 @@ public class BinaryTree2<E> {
 		 }
 	 }
 
-	 //search
+	 //search (k : 찾는 데이터)
 	 public Node search(Node root, int k) {
 		 if(root ==null || k == root.data) {
 			 System.out.print(root.data + " ");
@@ -79,7 +75,7 @@ public class BinaryTree2<E> {
 		 }
 	 }
 
-	 //최소값 추출
+	 //최소값 추출	-> 가장 왼쪽에 있는 노드의 데이터를 가져오면 됨.
 	 public Node minimum(Node root) {
 		 if(root.left == null) {
 			 System.out.print(root.data);
@@ -90,7 +86,7 @@ public class BinaryTree2<E> {
 		 }
 	 }
 
-	//최대값 추출
+	//최대값 추출 -> 가장 오른쪽에 있는 노드의 데이터를 가져오면 됨.
 	 public Node maximum(Node root) {
 		 if(root.right == null) {
 			 System.out.print(root.data);
@@ -103,12 +99,15 @@ public class BinaryTree2<E> {
 
 	 //successor
 	 public Node successor(Node root) {
+		 //1) 오른쪽 subtree가 있는 경우, 오른쪽 subtree의 최소값이 successor
 		 if(root.right != null)
 			 return minimum(root.right);
-
+		 
+		 //2) 오른쪽 부트리가 없는 경우, root의 왼쪽 subtree의 최대값이 successor 
 		 else if(root.right == null && root.left != null)
 			 return maximum(root.left);
 
+		 //3) 둘 다 존재하지 안흔ㄴ 경우, successor가 없음.
 		 else {
 			 System.out.print("successor가 존재하지 않음.");
 			 return root;
@@ -137,14 +136,17 @@ public class BinaryTree2<E> {
 
 	 //predecessor
 	 public Node predecessor(Node root) {
+		 //1) 왼쪽 subtree가 있는 경우, 왼쪽 subtree의 최대값이 predecessor
 		 if(root.left != null)
 			 return maximum(root.left);
 		 
+		 //2) 왼쪽 subtree가 없는 경우, 오른쪽 subtree의 최소값이 predecessor
 		 else if(root.left == null && root.right != null)
 			 return minimum(root.right);
 		 
+		 //3) 둘 다 존재하지 않는 경우, predecessor가 없음.
 		 else {
-			 System.out.print("successor가 존재하지 않음.");
+			 System.out.print("predecessor가 존재하지 않음.");
 			 return root;
 		 }
 	 }
@@ -167,7 +169,6 @@ public class BinaryTree2<E> {
 
 		 if(y == null)
 			 root = z;
-
 		 else {
 			 if(z.data < y.data)
 				 y.left = z;
@@ -194,60 +195,60 @@ public class BinaryTree2<E> {
 		 }
 
 		//Case 1: 자식노드가 없는 경우
-      if(current.left==null && current.right==null){
-          if(current==root){
-              root = null;
-          }
+	      if(current.left==null && current.right==null){
+	          if(current==root){
+	              root = null;
+	          }
+	
+	          if(parent.data < current.data){
+	              parent.right = null;
+	          }else{
+	              parent.left = null;
+	          }
+	      }
 
-          if(parent.data < current.data){
-              parent.right = null;
-          }else{
-              parent.left = null;
-          }
-      }
+	    //Case 2 : 1개의 자식노드를 가지는 경우
+	      else if(current.left != null && current.right == null){		//삭제할 노드가 왼쪽 자식 노드만 가지는 경우
+	          if(current==root){
+	              root = current.left;
+	          }
+	          else{
+	              if(parent.data > current.left.data)
+	              	parent.left = current.left;
+	              else
+	              	parent.right = current.left;
+	          }
+	      }
 
-    //Case 2 : 1개의 자식노드를 가지는 경우
-      else if(current.left != null && current.right == null){		//삭제할 노드가 왼쪽 자식 노드만 가지는 경우
-          if(current==root){
-              root = current.left;
-          }
-          else{
-              if(parent.data > current.left.data)
-              	parent.left = current.left;
-              else
-              	parent.right = current.left;
-          }
-      }
+	      else if(current.right != null && current.left == null){		//삭제할 노드가 오른쪽 자식 노드만 가지는 경우
+	          if(current==root){
+	              root = current.right;
+	          }
+	          else{
+	              if(parent.data > current.right.data)
+	              	parent.left = current.right;
+	              else
+	              	parent.right = current.right;
+	          }
+	      }
 
-      else if(current.right != null && current.left == null){		//삭제할 노드가 오른쪽 자식 노드만 가지는 경우
-          if(current==root){
-              root = current.right;
-          }
-          else{
-              if(parent.data > current.right.data)
-              	parent.left = current.right;
-              else
-              	parent.right = current.right;
-          }
-      }
-
-    //Case 3 : 두개의 자식을 갖는 경우
-      else{
-          // 오른쪽 서브트리의 최소값을 찾음
-          Node successor = successor(current);
-          Node successorParent = successorParent(current);
-
-          if(current==root){	// 삭제할 노드가 root인 경우
-              root = successor;
-          }
-          else{	
-              if(successor.right == null) //교체할 successor의 자식노드가 없을 경우 (successor는 right child밖에 가질 수 밖에 없음)
-              	successorParent.left = null;
-              else						//교체할 successor의 자식노드가 하나 있을 경우 (자식노드가 두개 일 수는 없음)
-              	successorParent.left = successor.right;    
-          }
-          current.data = successor.data;
-      }
+	    //Case 3 : 두개의 자식을 갖는 경우
+	      else{
+	          // 오른쪽 서브트리의 최소값을 찾음
+	          Node successor = successor(current);
+	          Node successorParent = successorParent(current);
+	
+	          if(current==root){	// 삭제할 노드가 root인 경우
+	              root = successor;
+	          }
+	          else{	
+	              if(successor.right == null) //교체할 successor의 자식노드가 없을 경우 (successor는 right child밖에 가질 수 밖에 없음)
+	              	successorParent.left = null;
+	              else						//교체할 successor의 자식노드가 하나 있을 경우 (자식노드가 두개 일 수는 없음)
+	              	successorParent.left = successor.right;    
+	          }
+	          current.data = successor.data;
+	      }
 	}
 
 

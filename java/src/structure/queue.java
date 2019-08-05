@@ -26,7 +26,8 @@ public class queue {
 		
 		System.out.println(queue);
 		
-		System.out.println(queue.peek());	// 큐의 가장 맨 앞 값을 반환
+		System.out.println(queue.peek());	// 큐의 가장 맨 앞 값을 반환, 제거되지는 않음.
+		System.out.println(queue.poll()); 	// 큐의 가장 맨 앞 값을 반환하고 해당 값은 제거됨.
 		System.out.println(queue.isEmpty()); // 큐가 비었으면 true, 아니면 false를 리턴 
 		
 	}
