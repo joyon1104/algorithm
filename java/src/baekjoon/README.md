@@ -9,7 +9,8 @@
 
 #### 2. 동적 계획법 (Dynamic Programming )
 
-
+- [1로 만들기](https://www.acmicpc.net/problem/1463) : 1463번
+- [스티커](https://www.acmicpc.net/problem/9465) : 9465번
 
 #### 3. 큐 & 스택 (Queue & Stack)
 
