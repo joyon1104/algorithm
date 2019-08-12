@@ -17,9 +17,13 @@
 
 #### 4. DFS
 
-
+- [유기농 배추](https://www.acmicpc.net/problem/1012) : 1012번
+- [텀 프로젝트](https://www.acmicpc.net/problem/9466) : 9466번
+- [적록색약](https://www.acmicpc.net/problem/10026) : 10026번
 
 #### 5. BFS
+
+- [토마토](https://www.acmicpc.net/problem/7576) : 7576번
 
 
 
