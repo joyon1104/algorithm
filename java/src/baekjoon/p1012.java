@@ -1,76 +1,73 @@
 package baekjoon;
 
-import java.util.List;
 import java.util.Scanner;
 
-//유기농 배추
+/*
+ * 190809
+ * 
+ * 백준 1012번
+ * -> 분류 : DFS
+ * DFS 참고자료 
+ * : https://ktko.tistory.com/entry/%ED%83%90%EC%83%89%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B9%8A%EC%9D%B4-%EC%9A%B0%EC%84%A0-%ED%83%90%EC%83%89DFS-Depth-First-Search
+ * 
+ * [ 유기농 배추 ]
+ * 
+ * => 성공
+ */
 
 public class p1012 {
+	static Scanner sc = new Scanner(System.in);
+	static int M;
+	static int N;
+	static int K;
+	static int[][] map;
+	static int[][] visited;
+	static int bug;
 	
-	private static Scanner scanner = new Scanner(System.in);
-	
-	static int[] dx = { -1, 0, 1, 0 };
-    static int[] dy = { 0, 1, 0, -1 };
-	static int[][] ground;
-	static int X;
-	static int Y;
-    
 	public static void main(String[] args) {
-		int ntest = scanner.nextInt();
+		int T = sc.nextInt();
 		
-		for (int t=0; t < ntest; t++) {
-			Y = scanner.nextInt();
-			X = scanner.nextInt();
-			int n = scanner.nextInt();
-			int cnt = 0;
+		for(int testcase = 0; testcase < T; testcase++) {
+			M = sc.nextInt();
+			N = sc.nextInt();
+			K = sc.nextInt();
 			
-			ground = new int[Y][X];
+			map = new int[M][N];
+			visited = new int[M][N];
 			
-			for (int i = 0; i < Y; i++) {
-				for (int j = 0; j < X; j++) {
-					ground[i][j] = 0;
+			int i = 0;
+			int j = 0;
+			
+			for(int k=0; k<K; k++) {
+				i = sc.nextInt();
+				j = sc.nextInt();
+				map[i][j] = 1;
+			}
+			
+			bug = 0;
+			
+			for(int p =0; p<M; p++) {
+				for(int q=0; q<N; q++) {
+					if(map[p][q] == 1 && visited[p][q] == 0)	// 처음 DFS탐색을 시작할 때 벌레를 센다.
+						bug++;
+					DFS(p,q);
 				}
 			}
-			
-			for (int j=0; j < n; j++){
-				int x = scanner.nextInt();
-				int y = scanner.nextInt();
-				System.out.println(x + " " + y);
-				ground[x][y] = 1;
-			}
-			
-			for (int i = 0; i < Y; i++) {
-				for (int j = 0; j < X; j++) {
-					if (ground[i][j] != 0) {
-                        DFS(i, j);
-                        //배추 수확
-                        cnt++;
-                    }
-				}
-			}
-			System.out.println(cnt);
-		}//
-	}//main
+			System.out.println(bug);
+		}
+	}
 	
-	public static void DFS(int X, int Y) {
-		 
-        for (int i = 0; i < 4; i++) {
-            //다음 방문지 nextX,와 nextY
-            int nextX = X + dx[i];
-            int nextY = Y + dy[i];
- 
-            //nextX, nextY가 범위를 벗어난다면 그냥 통과한다.
-            if (nextX < 0 || nextY < 0 || nextX >= Y || nextY >= X) {
-                continue;
-            }
-            //다음 방문할 값이 0 이라면 그냥 통과한다.
-            if (ground[nextX][nextY] == 0) {
-                continue;
-            }
-            //방문한점은 0으로 바꿔준다.
-            ground[nextX][nextY] = 0;
-            DFS(nextX, nextY);
-        }
-    }
+	static void DFS(int p, int q) {	
+		if(map[p][q] != 1 && visited[p][q] == 0 ) {	//map에 벌레가 없고, 한번도 방문하지 않은 경우 -> 탐색했으므로 방문 표시만.
+			visited[p][q] = 1;
+		}
+		else if(map[p][q] == 1 && visited[p][q] == 0) {		//map에 벌레가 있고, 한번도 방문하지 않은 경우 -> 방문 표시와 동서남북 DFS.
+			visited[p][q] = 1;
+			if(p-1>=0 && map[p-1][q] == 1 && visited[p-1][q] == 0) DFS(p-1,q);
+			if(p+1<M && map[p+1][q] == 1 && visited[p+1][q] == 0) DFS(p+1,q);
+			if(q-1>=0 && map[p][q-1] == 1 && visited[p][q-1] == 0) DFS(p,q-1);
+			if(q+1<N && map[p][q+1] == 1 && visited[p][q+1] == 0) DFS(p,q+1);
+		}
+	}
 	
 }
