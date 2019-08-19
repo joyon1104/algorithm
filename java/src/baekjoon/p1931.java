@@ -16,7 +16,7 @@ import java.util.StringTokenizer;
  * 
  * [ 회의실 배정 ] => 답
  * 
- * 참조 : 
+ * 참조 : https://seungahyoo.tistory.com/45
  * 
  * 문제 풀이
  * => 가장 먼저 끝나는 회의를 선택하고, 이 회의와 겹치지 않는 회의중 가장 먼저 끝나는 회의를 선택하는 것을 반복한다.
