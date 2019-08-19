@@ -24,7 +24,11 @@
 #### 5. BFS
 
 - [토마토](https://www.acmicpc.net/problem/7576) : 7576번
-
-
+- [나이트의 이동](https://www.acmicpc.net/problem/7562) : 7562번
+- [촌수계산](https://www.acmicpc.net/problem/2644) : 2644번
 
 #### 6. 탐욕법
+
+- [회의실배정](https://www.acmicpc.net/problem/1931) : 1931번
+- [과제](https://www.acmicpc.net/problem/13904) : 13904번
+
