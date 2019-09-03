@@ -32,3 +32,21 @@
 - [회의실배정](https://www.acmicpc.net/problem/1931) : 1931번
 - [과제](https://www.acmicpc.net/problem/13904) : 13904번
 
+
+
+### < [백준 삼성 SW 역량 테스트 기출 문제](https://www.acmicpc.net/workbook/view/1152) >
+
+- [구슬 탈출 2](https://www.acmicpc.net/problem/13460) : 13460번
+- [2048 (Easy)](https://www.acmicpc.net/problem/12100) : 12100번
+- [시험 감독](https://www.acmicpc.net/problem/13458) : 13458번 
+- [뱀](https://www.acmicpc.net/problem/3190) : 3190번 
+- [퇴사](https://www.acmicpc.net/problem/14501) : 14501번
+
+
+
+### < [백준 삼성 A형 기출 문제](https://www.acmicpc.net/workbook/view/2771) >
+
+- [파이프 옮기기 1](https://www.acmicpc.net/problem/17070) : 17070번
+- [야구](https://www.acmicpc.net/problem/17281) : 17281번
+- [배열 돌리기 4](https://www.acmicpc.net/problem/17406) : 17406번
+
