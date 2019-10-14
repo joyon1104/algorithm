@@ -51,6 +51,7 @@ public class List {
 	    list.add("SuChang");
 	    list.add("JunHyung");
 	    list.add("SuChang");
+	    // list.add(index,value);
 	    
 	    // 값으로 인텍스 찾기
 	    System.out.println(list.indexOf("SuChang")); // 앞에서 부터 "SuChang"의 위치 찾기
