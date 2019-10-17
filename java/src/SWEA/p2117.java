@@ -29,7 +29,7 @@ public class p2117 {
     static int N,M,K;
     static int[][] city;
      
-    static class Pair{
+    static private class Pair{
         int i;
         int j;
         public Pair(int i, int j) {
