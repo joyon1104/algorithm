@@ -7,7 +7,7 @@ import java.util.Stack;
  * - LIFO (Last In First Out)
  */
 
-public class stack {
+public class Stack_ {
 	
 	public static void main(String[] args) {
 		
