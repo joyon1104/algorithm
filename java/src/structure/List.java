@@ -28,37 +28,28 @@ public class List {
 		arrayList.add(1);
 		arrayList.add(2);
 		arrayList.add(3);
+		System.out.println(arrayList);
+		
+		// 수정
+		arrayList.set(1, 4);
+		System.out.println(arrayList);
 		
 		// 삭제 (index값으로 삭제) -> String arrayList의 경우 삭제하고싶은 값을 입력하여 삭제할 수 있음.
 		arrayList.remove(1);
+		System.out.println(arrayList);
 		
-		System.out.println(arrayList.get(0));
 		
 		/*
 		 * ArrayList 함수
 		 * arrayList.get(i) - i번째 값 불러오기 (= 배열 arr[i])
 		 * arrayList.size() - 리스트 개수 불러오기 (= 배열 arr.length) 
 		 * arrayList.clear() - 초기화
-		 * 
+		 * list.indexOf("SuChang") -  앞에서 부터 "SuChang"의 위치 찾기
+	     * list.lastIndexOf("SuChang") - 뒤에서 부터 "SuChang"의 위치 찾기
 		 * Collections.sort(arrayList) - 정렬 메소드
 		 */
 		
-		ArrayList<String> list = new ArrayList<String>();
-        
-	    list.add("GwangJik");
-	    list.add("KeonHo");
-	    list.add("TaeRim");
-	    list.add("SuChang");
-	    list.add("JunHyung");
-	    list.add("SuChang");
-	    // list.add(index,value);
-	    
-	    // 값으로 인텍스 찾기
-	    System.out.println(list.indexOf("SuChang")); // 앞에서 부터 "SuChang"의 위치 찾기
-	    System.out.println(list.lastIndexOf("SuChang")); //뒤에서 부터 "SuChang"의 위치 찾기
 		
-	    ///////////////////////////////////////////////////////////////////////////////
-	    
 		// 2)LinkedList
 		LinkedList<String> linkedList = new LinkedList<String>();
 		
@@ -66,11 +57,15 @@ public class List {
 		linkedList.add("A");
 		linkedList.add("B");
 		linkedList.add("C");
-		
-		// 삭제 (index값으로 삭제)
-		linkedList.remove(2);
-		
 		System.out.println(linkedList);
 		
+		//수정
+		linkedList.set(1, "D");
+		System.out.println(linkedList);
+		
+		// 삭제 (index값으로 삭제)
+		linkedList.remove(1);
+		System.out.println(linkedList);
+
 	}
 }

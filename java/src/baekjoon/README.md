@@ -24,12 +24,11 @@
 - [계단 오르기](https://www.acmicpc.net/problem/2579) : 2579번
 - [제곱수의 합](https://www.acmicpc.net/problem/1699) : 1699번
 
-#### 3. **BFS & DFS**
+#### 3. **그래프 / BFS & DFS**
 
 - [유기농 배추](https://www.acmicpc.net/problem/1012) : 1012번
 - [텀 프로젝트](https://www.acmicpc.net/problem/9466) : 9466번
 - [적록색약](https://www.acmicpc.net/problem/10026) : 10026번
-
 - [토마토](https://www.acmicpc.net/problem/7576) : 7576번
 - [나이트의 이동](https://www.acmicpc.net/problem/7562) : 7562번
 - [촌수계산](https://www.acmicpc.net/problem/2644) : 2644번
@@ -37,22 +36,42 @@
 - [DFS와 BFS](https://www.acmicpc.net/problem/1260) : 1260번
 - [미로 만들기](https://www.acmicpc.net/problem/2665) : 2665번
 - [암호 만들기](https://www.acmicpc.net/problem/1759) : 1759번
+- [연결요소의 개수](https://www.acmicpc.net/problem/11724) : 11724
+- [이분 그래프](https://www.acmicpc.net/problem/1707) : 1707
+- [순열 사이클](https://www.acmicpc.net/problem/10451) : 10451
+- [반복수열](https://www.acmicpc.net/problem/2331) : 2331
+- [텀 프로젝트](https://www.acmicpc.net/problem/9466) : 9466
+- [단지번호붙이기](https://www.acmicpc.net/problem/2667) : 2667
 
 #### 4. 큐 & 스택 (Queue & Stack)
 
 - [프린터 큐](https://www.acmicpc.net/problem/1966) : 1966번
 - [창고 다각형](https://www.acmicpc.net/problem/2304) : 2304번
+- [스택](https://www.acmicpc.net/problem/10828) : 10828번
+- [괄호](https://www.acmicpc.net/problem/9012) : 9012번
+- [쇠막대기](https://www.acmicpc.net/problem/10799) : 10799번
+- [큐](https://www.acmicpc.net/problem/10845) : 10845
+- [덱](https://www.acmicpc.net/problem/10866) : 10866
 
 #### 5. 탐욕법 (그리디 알고리즘)
 
 - [회의실배정](https://www.acmicpc.net/problem/1931) : 1931번
 - [과제](https://www.acmicpc.net/problem/13904) : 13904번
 
-#### 6. 그래프
+#### 6. 이분/삼분 탐색
 
-#### 7. 이분/삼분 탐색
+#### 7. 분할정복
 
-#### 8. 분할정복
+#### 8. 기타
+
+* [알파벳 개수](https://www.acmicpc.net/problem/10808) : 10808
+* [알파벳 찾기](https://www.acmicpc.net/problem/10809) : 10809
+* [문자열 분석](https://www.acmicpc.net/problem/10820) : 10820
+* [ROT13](https://www.acmicpc.net/problem/11655) : 11655
+* [네 수](https://www.acmicpc.net/problem/10824) : 10824
+* [접미사 배열](https://www.acmicpc.net/problem/11656) : 11656
+* [에디터](https://www.acmicpc.net/problem/1406) : 1406
+* [요세푸스 문제](https://www.acmicpc.net/problem/1158) : 1158
 
 
 
@@ -63,6 +82,10 @@
 - [시험 감독](https://www.acmicpc.net/problem/13458) : 13458번 
 - [뱀](https://www.acmicpc.net/problem/3190) : 3190번 
 - [퇴사](https://www.acmicpc.net/problem/14501) : 14501번
+- [최대공약수와 최소공배수](https://www.acmicpc.net/problem/2609) : 2609
+- [진법 변환2](https://www.acmicpc.net/problem/11005) : 11005
+- [진법 변환](https://www.acmicpc.net/problem/2745) : 2745
+- [2진수 8진수](https://www.acmicpc.net/problem/1373) : 1373
 
 
 
