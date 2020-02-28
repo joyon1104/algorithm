@@ -43,7 +43,7 @@ public class MergeSort {
 			if(arr[i] <= arr[j])
 				tmp[k++] = arr[i++];	//tmp에 arr[i]의 값을 넣고, k와 i 인덱스 1씩 증가.
 			else
-				tmp[k++] = arr[j++];	//tmp에 arr[j]의 값을 넣고, k와 i 인덱스 1씩 증가.
+				tmp[k++] = arr[j++];	//tmp에 arr[j]의 값을 넣고, k와 j 인덱스 1씩 증가.
 		}
 		
 		//두 배열 중 한 배열이 이미 배열을 끝냈을 때 다음 두 while문이 돈다.
