@@ -8,6 +8,12 @@
 
 * [부분 수열의 합]( https://www.acmicpc.net/problem/1182) : 1182번
 * [사탕 게임](https://www.acmicpc.net/problem/3085) : 3085번 
+* [날짜계산](https://www.acmicpc.net/problem/1476) : 1476
+* [리모컨](https://www.acmicpc.net/problem/1107) : 1107
+* [1,2,3더하기](https://www.acmicpc.net/problem/9095) : 9095
+* [차이를 최대로](https://www.acmicpc.net/problem/10819) : 10819
+* [외판원 순회2](https://www.acmicpc.net/problem/10971) : 10971
+* [숨바꼭질](https://www.acmicpc.net/problem/1697) : 1697
 
 #### 2. 동적 계획법 (Dynamic Programming )
 
@@ -23,6 +29,7 @@
 - [연속합](https://www.acmicpc.net/problem/1912) : 1912번
 - [계단 오르기](https://www.acmicpc.net/problem/2579) : 2579번
 - [제곱수의 합](https://www.acmicpc.net/problem/1699) : 1699번
+- [파도반 수열](https://www.acmicpc.net/problem/9461) : 9461
 
 #### 3. **그래프 / BFS & DFS**
 
@@ -42,6 +49,11 @@
 - [반복수열](https://www.acmicpc.net/problem/2331) : 2331
 - [텀 프로젝트](https://www.acmicpc.net/problem/9466) : 9466
 - [단지번호붙이기](https://www.acmicpc.net/problem/2667) : 2667
+- [섬의 개수](https://www.acmicpc.net/problem/4963) : 4963
+- [미로 탐색](https://www.acmicpc.net/problem/2178) : 2178
+- [다리 만들기](https://www.acmicpc.net/problem/2146) : 2146
+- [트리 순회](https://www.acmicpc.net/problem/1991) : 1991
+- [트리의 부모 찾기](https://www.acmicpc.net/problem/11725) : 11725
 
 #### 4. 큐 & 스택 (Queue & Stack)
 
@@ -57,12 +69,32 @@
 
 - [회의실배정](https://www.acmicpc.net/problem/1931) : 1931번
 - [과제](https://www.acmicpc.net/problem/13904) : 13904번
+- [동전 0](https://www.acmicpc.net/problem/11047) : 11047
+- [대회 or 인턴](https://www.acmicpc.net/problem/2875) : 2875
+- [30](https://www.acmicpc.net/problem/10610) : 10610
+- [ATM](https://www.acmicpc.net/problem/11399) : 11399
+- [수 묶기](https://www.acmicpc.net/problem/1744) : 1744
 
 #### 6. 이분/삼분 탐색
 
+* [랜선 자르기](https://www.acmicpc.net/problem/1654) : 1654
+* [나무 자르기](https://www.acmicpc.net/problem/2805) : 2805
+* [공유기 설치](https://www.acmicpc.net/problem/2110) : 2110
+* [숫자카드](https://www.acmicpc.net/problem/10815) : 10815
+* [숫자카드 2](https://www.acmicpc.net/problem/10816) : 10816
+* [민호와 강호](https://www.acmicpc.net/problem/11662) : 11662
+
 #### 7. 분할정복
 
+* [배열 합치기](https://www.acmicpc.net/problem/11728) : 11728
+* [종이의 개수](https://www.acmicpc.net/problem/1780) : 1780
+* [쿼드트리](https://www.acmicpc.net/problem/1992) : 1992
+* [버블 소트](https://www.acmicpc.net/problem/1517) : 1517
+
 #### 8. 기타
+
+* 문자열 아스키 변환 : 10808, 10809, 10820, 2743, 11655, 10824, 11656, 1406, 1158
+* 진수변환 : 11005, 2745, 1373
 
 * [알파벳 개수](https://www.acmicpc.net/problem/10808) : 10808
 * [알파벳 찾기](https://www.acmicpc.net/problem/10809) : 10809
@@ -73,7 +105,15 @@
 * [에디터](https://www.acmicpc.net/problem/1406) : 1406
 * [요세푸스 문제](https://www.acmicpc.net/problem/1158) : 1158
 
+#### 9. 위상정렬
 
+* [줄 세우기](https://www.acmicpc.net/problem/2252) : 2252
+* [ACM Craft](https://www.acmicpc.net/problem/1005) : 1005
+* [문제집](https://www.acmicpc.net/problem/1766) : 1766
+* [게임 개발](https://www.acmicpc.net/problem/1516) : 1516
+* [부등호](https://www.acmicpc.net/problem/2529) : 2529
+* [음악프로그램](https://www.acmicpc.net/problem/2623) : 2623
+* [최종 순위](https://www.acmicpc.net/problem/3665) : 3665
 
 ### < [백준 삼성 SW 역량 테스트 기출 문제](https://www.acmicpc.net/workbook/view/1152) >
 

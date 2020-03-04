@@ -9,7 +9,7 @@ public class TopologySort {
 	static ArrayList<ArrayList<Integer>> arrList;
 	
 	static void topology() {
-		int result[] = new int[10];
+		int[] result = new int[10];
 		Queue<Integer> que = new LinkedList<Integer>();
 		
 		// 진입차수가 0인 노드를 큐에 삽입
