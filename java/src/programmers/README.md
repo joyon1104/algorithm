@@ -2,8 +2,6 @@
 
 #### 1. 완전 탐색 (Bruth-force Search)
 
-* 
-
 #### 2. 동적 계획법 (Dynamic Programming )
 
 - [2xn 타일링](https://programmers.co.kr/learn/courses/30/lessons/12900) : [p2000](https://github.com/joyon1104/algorithm/blob/master/java/src/programmers/p2000.java)
@@ -29,3 +27,15 @@
 #### 6. 이분 탐색
 
 * [예산](https://programmers.co.kr/learn/courses/30/lessons/43237) : [p6001](https://github.com/joyon1104/algorithm/blob/master/java/src/programmers/p6001.java)
+
+
+
+### 레벨별 문제풀이
+
+#### [Level 2]
+
+* 스킬트리
+* 
+* 
+
+#### [Level 3]
