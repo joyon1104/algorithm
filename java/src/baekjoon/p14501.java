@@ -1,63 +1,27 @@
 package baekjoon;
-
 import java.util.Scanner;
 
-/*
- * 190828
- * 
- * ë°±ì¤€ ì‚¼ì„± SW ì—­ëŸ‰ í…ŒìŠ¤íŠ¸ ê¸°ì¶œ ë¬¸ì œ
- * 
- * 14501ë²ˆ 
- * [í‡´ì‚¬]
- * 
- * -> ì‹¤íŒ¨ (stack overflow)
- * 
- */
 
 public class p14501 {
-
-	static int N, max;
-	static int[][] schedule;
-	
-	static Scanner sc = new Scanner(System.in);
-	
-	static void compute (int[][] schedule, int i, int[] check, int sum) {
-		
-		if(sum > max)
-			max = sum;
-		
-		if(i>N) 
-			return;
-		
-		if(schedule[i][0] != 0) {
-			check[i] = 1;
-			compute(schedule, i+schedule[i][0]-1, check, sum+schedule[i][1]);
-		}
-		
-		check[i] = 0;
-		compute(schedule, i+1, check, sum);
-		
-		
-	}
-	
 	public static void main(String[] args) {
-		
-		N = sc.nextInt();
-		schedule = new int[N+1][2];
-		int[] check = new int[N+1];
+		Scanner sc = new Scanner(System.in);
+		int N = sc.nextInt();
+		int[] T = new int[N+2];	// ±â°£	
+		int[] P = new int[N+2];	// °¡°Ý
+		int[] dp = new int[N+2];// ÃÖ´ë±Ý¾×
 		
 		for(int i=1; i<=N; i++) {
-			int t = sc.nextInt();
-			int p = sc.nextInt();
-			
-			if(i+t-1<=N) {
-				schedule[i][0] = t;
-				schedule[i][1] = p;
-			}
+			T[i] = sc.nextInt();
+			P[i] = sc.nextInt();
 		}
 		
-		compute(schedule,1,check,0);
-		System.out.println(max);
-		
+		for(int i=N; i>0; i--) {
+			int day = i + T[i];
+			if(day <= N+1)	//ex) NÀÌ 7ÀÏ ¶§ 7ÀÏÂ°³¯ ±â°£ÀÌ 1ÀÎ »ó´ãÀº 7ÀÏ ÇÏ·çµ¿¾È ÇÒ ¼ö ÀÖÀ¸¹Ç·Î N+1
+				dp[i] = Math.max(dp[day]+P[i], dp[i+1]);	// ex) 5ÀÏÂ° ¿ä±Ý + 7ÀÏÂ° ÃÖ´ë ±Ý¾× °ú (5ÀÏ³¯ ÀÏÇÏÁö ¾ÊÀ» ¶§) 6ÀÏ³¯ ÃÖ´ë±Ý¾× »çÀÌÀÇ ÃÖ´ë°ª!
+			else
+				dp[i] = dp[i+1];
+		}
+		System.out.println(dp[1]);
 	}
 }

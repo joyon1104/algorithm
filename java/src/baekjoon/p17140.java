@@ -1,136 +1,142 @@
 package baekjoon;
-
 import java.util.*;
 
 public class p17140 {
+	static int N;
+	static int M;
+	static int[][] map;
 	
-	static int[][] A = new int[100][100];
-	static int rc = 0; //0 : 행연산, 1 : 열연산
-	static int time = 0;
-	static int max_r = 2;
-	static int max_c = 2;
-	static int tmp = 0;
-	
-	static Scanner sc = new Scanner(System.in);
-	static HashMap<Integer, Integer> map = new HashMap(); 
-	
-	public static Object getKeyFromValue(HashMap<Integer, Integer> map, int val) {
-	  for (Object o : map.keySet()) {
-		  if (map.get(o).equals(val)) {
-			  return o;
-		  }
-	  }
-	  return null;
+	static class Pair implements Comparable<Pair>{
+		int num;
+		int cnt;
+		public Pair(int num, int cnt) {
+			this.num = num;
+			this.cnt = cnt;
+		}
+		
+		public int compareTo(Pair target) {
+			if(this.cnt < target.cnt)
+				return -1;
+			else if(this.cnt == target.cnt) {
+				if(this.num < target.num) return -1;
+				else if(this.num > target.num) return 1;
+				else return 0;
+			}
+			else return 1;
+		}
+	}
+
+	public static void solve(ArrayList<Integer> arrlist, int idx, char c){
+		PriorityQueue<Pair> pq = new PriorityQueue<Pair>();
+		HashMap<Integer,Integer> hm = new HashMap<>();
+		for(int n : arrlist) {
+			if(hm.containsKey(n))
+				hm.put(n,hm.get(n)+1);
+			else
+				hm.put(n,1);
+		}
+		for(int k : hm.keySet())
+			pq.add(new Pair(k,hm.get(k)));
+		
+		int n=1;
+		int[] arr = new int[101];
+		while(!pq.isEmpty()) {
+			Pair p = pq.poll();
+			if(n<=100)
+				arr[n] = p.num;
+			else break;
+			if(n+1<=100)
+				arr[n+1] = p.cnt;
+			else break;
+			n+=2;
+		}
+		
+		if(c=='r') {
+			for(int i=1; i<=100; i++) {
+				map[idx][i] = arr[i];
+			}
+		}
+		else {
+			for(int i=1; i<=100; i++) {
+				map[i][idx] = arr[i];
+			}
+		}
 	}
 	
-	static void row(int[][]A) {
-		System.out.println("r연산");
-		tmp = 0;	//max_c계산을 위한 임시값
-		for(int i = 0; i<= max_r; i++) {
-			// map에 (A[i][j],등장횟수)로 추가 
-			for(int j=0; j<=max_c; j++) {
-				if(A[i][j] == 0)             
-					continue;
-				else {
-					if(map.containsKey(A[i][j])== false)
-						map.put(A[i][j], 1);
-					else {
-						int val = (int)map.get(A[i][j]);
-						map.put(A[i][j], val+1);
-					}
-					A[i][j] = 0;
+	public static int reset(int[][] map, char c) {
+		int max = 0;
+		if(c == 'c') {
+			for(int i=1; i<=100; i++) {
+				int j = 1;
+				for(j= 1; j<=100; j++) {
+					if(map[i][j]==0)
+						break;
 				}
+				if(max < j-1)
+					max = j-1;
 			}
-			
-			if(map.isEmpty()) continue; 
-			
-			int j=0;
-			
-			while(!(map.isEmpty())) {
-				int min_val = Collections.min(map.values());
-				int min_key = (int)getKeyFromValue(map, min_val);
-				A[i][j] = min_key;
-				A[i][j+1] = min_val;
-				System.out.print(A[i][j] + " " + A[i][j+1] + " ");
-				map.remove(min_key);
-				
-				if(j+1 > tmp)	tmp = j+1;
-				j += 2;
-			}
-			System.out.println();
 		}
-		System.out.println("===============");
-		max_c = tmp;
-		System.out.println(max_c);
-	}
-	
-	static void column(int[][]A) {
-		System.out.println("c연산");
-		tmp = 0;	//max_c계산을 위한 임시값
-		for(int j = 0; j<= max_c; j++) {
-			// map에 (A[i][j],등장횟수)로 추가 
-			for(int i=0; i<=max_r; i++) {
-				if(A[i][j] == 0)             
-					continue;
-				else {
-					if(map.containsKey(A[i][j])== false)
-						map.put(A[i][j], 1);
-					else {
-						int val = (int)map.get(A[i][j]);
-						map.put(A[i][j], val+1);
-					}
-					A[i][j] = 0;
+		else {
+			for(int i=1; i<=100; i++) {
+				int j = 1;
+				for(j= 1; j<=100; j++) {
+					if(map[j][i]==0)
+						break;
 				}
+				if(max < j-1)
+					max = j-1;
 			}
-			
-			if(map.isEmpty()) continue; 
-						
-			int i=0;
-			
-			while(!(map.isEmpty())) {
-				int max_val = Collections.min(map.values());
-				int max_key = (int)getKeyFromValue(map, max_val);
-				A[i][j] = max_key;
-				A[i+1][j] = max_val;
-				System.out.print(A[i][j] + " " + A[i+1][j] + " ");
-				map.remove(max_key);
-				if(i+1 > tmp)	tmp = i+1;
-				i += 2;
-			}
-			System.out.println();
 		}
-		System.out.println("===============");
-		max_r = tmp;
-		System.out.println(max_r);
+		return max;
 	}
 	
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 		int r = sc.nextInt();
 		int c = sc.nextInt();
 		int k = sc.nextInt();
-		
-		for(int i=0; i<3; i++) {
-			for(int j=0; j<3; j++) {
-				A[i][j] = sc.nextInt();
-			}
+		int time = 0;
+		map = new int[101][101];
+		N = 3;
+		M = 3;
+		for(int i=1; i<=N; i++) {
+			for(int j=1; j<=M; j++)
+				map[i][j] = sc.nextInt();
 		}
 		
-		while(A[r-1][c-1] != k && time <= 100){
-			if(rc == 0) {	//r연산 
-				row(A);
-				if(max_r < max_c)	rc = 1;
+		while(map[r][c] != k) {
+			if(time > 100) {
+				time = -1;
+				break;
 			}
-			else {			//c연산 
-				column(A);
-				if(max_r >= max_c)	rc = 0;
+			if(N>=M) {
+				for(int i=1; i<=N; i++) {
+					ArrayList<Integer> arrlist = new ArrayList<>();
+					for(int j=1; j<=100; j++) {
+						if(map[i][j]==0)
+							continue;
+						arrlist.add(map[i][j]);
+					}
+					solve(arrlist,i,'r');
+				}
+				M = reset(map,'c');
 			}
-			time +=1;
+			else {
+				for(int j=1; j<=M; j++) {
+					ArrayList<Integer> arrlist = new ArrayList<>();
+					for(int i=1; i<=100; i++) {
+						if(map[i][j]==0)
+							continue;
+						arrlist.add(map[i][j]);
+					}
+					solve(arrlist,j,'c');
+				}
+				N = reset(map,'r');
+			}
+			time++;
 		}
 		
-		if (time > 100)
-			System.out.println(-1);
-		else
-			System.out.println(time);
+		System.out.println(time);
 		
 	}
 
